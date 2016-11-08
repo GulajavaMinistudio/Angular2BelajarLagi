@@ -12,12 +12,13 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var quickstart_component_1 = require("./quickstarts/quickstart.component");
 var ikan_editor_component_1 = require("./ikaneditor/ikan-editor.component");
+var forms_1 = require("@angular/forms");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
             declarations: [quickstart_component_1.QuickstartComponent,
                 ikan_editor_component_1.IkanEditorComponent],
             bootstrap: [ikan_editor_component_1.IkanEditorComponent]

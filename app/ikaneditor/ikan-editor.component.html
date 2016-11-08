@@ -5,13 +5,28 @@
     <title>Editor Ikan</title>
 </head>
 <body>
-    <h1>{{title}}</h1>
-    <h2>Nama {{ikan_sub.nama_ikan}}</h2>
-    <div><label>ID Ikan : </label> {{ikan_sub.id}}</div>
-    <div>
-        <label>Nama Ikan : </label> {{ikan_sub.nama_ikan}}
-        <input value="{{ikan_sub.id}}" placeholder="id nomor ikan">
-        <input value="{{ikan_sub.nama_ikan}}" placeholder="nama lengkap ikan">
-    </div>
+<h1>{{title}}</h1>
+
+<!--daftar ikan-->
+<ul class="ikans_class">
+    <li *ngFor="let ikan of list_ikan">
+        <span class="id_badge">{{ikan.id}}</span> <span class="nama_badge"> {{ikan.nama_ikan}}</span>
+    </li>
+</ul>
+
+
+<h2>Nama {{ikan_sub.nama_ikan}}</h2>
+<div>
+    <label>ID Ikan : </label> {{ikan_sub.id}}
+</div>
+<div>
+    <label>ID Ikan : </label>
+    <input [(ngModel)]="ikan_sub.id" placeholder="id nomor ikan">
+</div>
+<div>
+    <label>Nama Ikan : </label>
+    <input [(ngModel)]="ikan_sub.nama_ikan" placeholder="nama lengkap ikan">
+</div>
+
 </body>
 </html>
