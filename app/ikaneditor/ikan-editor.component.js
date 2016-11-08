@@ -9,22 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var quickstart_component_1 = require("./quickstarts/quickstart.component");
-var ikan_editor_component_1 = require("./ikaneditor/ikan-editor.component");
-var AppModule = (function () {
-    function AppModule() {
+var IkanClass = (function () {
+    function IkanClass() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [quickstart_component_1.QuickstartComponent,
-                ikan_editor_component_1.IkanEditorComponent],
-            bootstrap: [ikan_editor_component_1.IkanEditorComponent]
+    return IkanClass;
+}());
+exports.IkanClass = IkanClass;
+var IkanEditorComponent = (function () {
+    function IkanEditorComponent() {
+        this.title = 'Daftar Ikan';
+        this.ikan_sub = {
+            id: 2,
+            nama_ikan: "Ikan lele"
+        };
+    }
+    IkanEditorComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'my-app',
+            templateUrl: 'ikan-editor.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], IkanEditorComponent);
+    return IkanEditorComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.IkanEditorComponent = IkanEditorComponent;
+//# sourceMappingURL=ikan-editor.component.js.map
