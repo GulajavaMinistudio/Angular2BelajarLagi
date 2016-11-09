@@ -13,6 +13,7 @@ var platform_browser_1 = require("@angular/platform-browser");
 var quickstart_component_1 = require("./quickstarts/quickstart.component");
 var ikan_editor_component_1 = require("./ikaneditor/ikan-editor.component");
 var forms_1 = require("@angular/forms");
+var ikan_detail_component_1 = require("./ikaneditor/ikan-detail.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,7 +21,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
             declarations: [quickstart_component_1.QuickstartComponent,
-                ikan_editor_component_1.IkanEditorComponent],
+                ikan_editor_component_1.IkanEditorComponent, ikan_detail_component_1.IkanDetailComponent],
             bootstrap: [ikan_editor_component_1.IkanEditorComponent]
         }), 
         __metadata('design:paramtypes', [])

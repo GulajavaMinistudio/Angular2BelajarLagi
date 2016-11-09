@@ -9,27 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var ikan_data_service_1 = require("./ikan-data.service");
-var IkanEditorComponent = (function () {
-    function IkanEditorComponent(ikanServices) {
-        this.ikanServices = ikanServices;
-        this.title = 'Daftar Ikan';
-        this.list_ikan = this.ikanServices.getDaftarIkan();
+var ikan_detail_class_1 = require("./ikan-detail-class");
+var IkanDetailComponent = (function () {
+    function IkanDetailComponent() {
     }
-    IkanEditorComponent.prototype.onSelect = function (ikan_pilih) {
-        this.ikanPilihan = ikan_pilih;
-    };
-    IkanEditorComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', ikan_detail_class_1.IkanClass)
+    ], IkanDetailComponent.prototype, "ikan_detail", void 0);
+    IkanDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
-            templateUrl: 'ikan-list.component.html',
-            styleUrls: ["ikan-editor.component.css"],
-            providers: [ikan_data_service_1.IkanDataService]
+            selector: "ikan-selector-detail",
+            templateUrl: "ikan-list-detail.component.html",
+            styleUrls: ["ikan-editor.component.css"]
         }), 
-        __metadata('design:paramtypes', [ikan_data_service_1.IkanDataService])
-    ], IkanEditorComponent);
-    return IkanEditorComponent;
+        __metadata('design:paramtypes', [])
+    ], IkanDetailComponent);
+    return IkanDetailComponent;
 }());
-exports.IkanEditorComponent = IkanEditorComponent;
-//# sourceMappingURL=ikan-editor.component.js.map
+exports.IkanDetailComponent = IkanDetailComponent;
+//# sourceMappingURL=ikan-detail.component.js.map

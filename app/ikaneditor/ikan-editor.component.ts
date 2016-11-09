@@ -2,41 +2,46 @@
  * Created by kucingmint on 11/8/16.
  */
 import {Component} from "@angular/core";
-
-export class IkanClass {
-    id: number;
-    nama_ikan: string;
-}
-
-const ikanList: IkanClass[] = [
-    {id: 10, nama_ikan: "Lele"},
-    {id: 11, nama_ikan: "Mujair"},
-    {id: 12, nama_ikan: "Mas"},
-    {id: 13, nama_ikan: "Mas Koi"},
-    {id: 14, nama_ikan: "Teri"},
-    {id: 15, nama_ikan: "Ikan ikanan"},
-    {id: 16, nama_ikan: "Ikan Kura"}
-];
+import {IkanClass} from "./ikan-detail-class";
+import {IkanDataService} from "./ikan-data.service";
 
 
-@Component ({
+// const ikanList: IkanClass[] = [
+//     {id_nama_ikan: 10, nama_ikan: "Lele"},
+//     {id_nama_ikan: 11, nama_ikan: "Mujair"},
+//     {id_nama_ikan: 12, nama_ikan: "Mas"},
+//     {id_nama_ikan: 13, nama_ikan: "Mas Koi"},
+//     {id_nama_ikan: 14, nama_ikan: "Teri"},
+//     {id_nama_ikan: 15, nama_ikan: "Ikan ikanan"},
+//     {id_nama_ikan: 16, nama_ikan: "Ikan Kura"}
+// ];
+
+
+@Component({
     moduleId: module.id,
     selector: 'my-app',
-    templateUrl: 'ikan-editor.component.html',
-    styleUrls: ["ikan-editor.component.css"]
+    templateUrl: 'ikan-list.component.html',
+    styleUrls: ["ikan-editor.component.css"],
+    providers: [IkanDataService]
 })
 
 
-export class IkanEditorComponent{
+export class IkanEditorComponent {
     title = 'Daftar Ikan';
-    list_ikan = ikanList;
-    ikanPilihan : IkanClass;
+    list_ikan: IkanClass[];
+    ikanPilihan: IkanClass;
+
+    constructor(private ikanServices: IkanDataService) {
+        this.list_ikan = this.ikanServices.getDaftarIkan();
+    }
 
     onSelect(ikan_pilih: IkanClass): void {
         this.ikanPilihan = ikan_pilih;
     }
+
     // ikan_sub : IkanClass = {
     //     id: 2,
     //     nama_ikan: "Ikan lele"
     // };
+    // list_ikan = ikanList;
 }

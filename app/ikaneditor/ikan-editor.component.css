@@ -57,10 +57,44 @@
 }
 
 
+.div_id_ikan {
+    font-family: Helvetica, sans-serif;
+    color: #454545;
+}
 
+.div_id_ikan_edit {
+    font-family: Helvetica, sans-serif;
+    color: #454545;
+}
 
+.div_nama_ikan_edit {
+    font-family: Helvetica, sans-serif;
+    color: #454545;
+}
 
+.input_id_ikan {
+    font-family: Helvetica, sans-serif;
+    font-size: 100%;
+    color: #454545;
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #17b76f;
+    border-radius: 4px;
+}
 
+.input_nama_ikan {
+    font-family: Helvetica, sans-serif;
+    font-size: 100%;
+    color: #454545;
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #17b76f;
+    border-radius: 4px;
+}
 
 
 

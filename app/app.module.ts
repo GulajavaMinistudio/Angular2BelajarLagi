@@ -8,12 +8,13 @@ import {BrowserModule} from "@angular/platform-browser";
 import {QuickstartComponent} from "./quickstarts/quickstart.component";
 import {IkanEditorComponent} from "./ikaneditor/ikan-editor.component";
 import {FormsModule} from "@angular/forms";
+import {IkanDetailComponent} from "./ikaneditor/ikan-detail.component";
 
 
 @NgModule({
     imports: [BrowserModule, FormsModule],
     declarations: [QuickstartComponent,
-    IkanEditorComponent],
+    IkanEditorComponent, IkanDetailComponent],
     bootstrap: [IkanEditorComponent]
 })
 
