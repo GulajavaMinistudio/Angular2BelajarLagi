@@ -1,8 +1,9 @@
 /*DAFTAR CSS UNTUK DAFTAR IKAN */
 
 .selected {
-    background-color: #CFD8DC;
-    color: white;
+    background-color: #CFD8DC ;
+    color: #ff5962;
+    font-family: Helvetica, sans-serif;
 }
 
 .ikans_class {
@@ -21,6 +22,7 @@
     padding: .3em 0;
     height: 2.4em;
     border-radius: 4px;
+    font-family: Helvetica, sans-serif;
 }
 
 .ikans_class li.selected:hover {
@@ -54,10 +56,6 @@
     border-radius: 4px 0 0 4px;
 }
 
-.ikans_class .nama_badge {
-    font-family: Helvetica, sans-serif;
-    color: #787878;
-}
 
 
 

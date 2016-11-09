@@ -30,8 +30,13 @@ const ikanList: IkanClass[] = [
 export class IkanEditorComponent{
     title = 'Daftar Ikan';
     list_ikan = ikanList;
-    ikan_sub : IkanClass = {
-        id: 2,
-        nama_ikan: "Ikan lele"
-    };
+    ikanPilihan : IkanClass;
+
+    onSelect(ikan_pilih: IkanClass): void {
+        this.ikanPilihan = ikan_pilih;
+    }
+    // ikan_sub : IkanClass = {
+    //     id: 2,
+    //     nama_ikan: "Ikan lele"
+    // };
 }

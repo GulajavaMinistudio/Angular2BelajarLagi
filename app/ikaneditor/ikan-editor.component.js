@@ -28,11 +28,10 @@ var IkanEditorComponent = (function () {
     function IkanEditorComponent() {
         this.title = 'Daftar Ikan';
         this.list_ikan = ikanList;
-        this.ikan_sub = {
-            id: 2,
-            nama_ikan: "Ikan lele"
-        };
     }
+    IkanEditorComponent.prototype.onSelect = function (ikan_pilih) {
+        this.ikanPilihan = ikan_pilih;
+    };
     IkanEditorComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

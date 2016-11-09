@@ -9,24 +9,29 @@
 
 <!--daftar ikan-->
 <ul class="ikans_class">
-    <li *ngFor="let ikan of list_ikan">
+    <li *ngFor="let ikan of list_ikan"
+        [class.selected] = "ikan === ikanPilihan"
+        (click)="onSelect(ikan)">
         <span class="id_badge">{{ikan.id}}</span> <span class="nama_badge"> {{ikan.nama_ikan}}</span>
     </li>
 </ul>
 
+<div *ngIf="ikanPilihan">
+    <h2>Nama {{ikanPilihan.nama_ikan}}</h2>
+    <div>
+        <label>ID Ikan : </label> {{ikanPilihan.id}}
+    </div>
+    <div>
+        <label>ID Ikan : </label>
+        <input [(ngModel)]="ikanPilihan.id" placeholder="id nomor ikan">
+    </div>
+    <div>
+        <label>Nama Ikan : </label>
+        <input [(ngModel)]="ikanPilihan.nama_ikan" placeholder="nama lengkap ikan">
+    </div>
+</div>
 
-<h2>Nama {{ikan_sub.nama_ikan}}</h2>
-<div>
-    <label>ID Ikan : </label> {{ikan_sub.id}}
-</div>
-<div>
-    <label>ID Ikan : </label>
-    <input [(ngModel)]="ikan_sub.id" placeholder="id nomor ikan">
-</div>
-<div>
-    <label>Nama Ikan : </label>
-    <input [(ngModel)]="ikan_sub.nama_ikan" placeholder="nama lengkap ikan">
-</div>
+
 
 </body>
 </html>
