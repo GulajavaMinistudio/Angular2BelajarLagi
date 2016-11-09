@@ -1,3 +1,4 @@
+///<reference path="../../node_modules/@types/core-js/index.d.ts"/>
 /**
  * Created by kucingmint on 11/9/16.
  */
@@ -15,5 +16,13 @@ export class IkanDataService {
 
     getDaftarIkanBesar(): IkanClass[] {
         return ListIkanBesarMock;
+    }
+
+    getDaftarIkanPromisAsync(): Promise<IkanClass[]> {
+        return Promise.resolve(ListIkanMock);
+    }
+
+    getDaftarIkanBesarPromiseAsync(): Promise<IkanClass[]> {
+        return Promise.resolve(ListIkanBesarMock);
     }
 }

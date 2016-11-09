@@ -8,6 +8,12 @@ export const ListIkanMock: IkanClass[] = [
     {id_nama_ikan: 12, nama_ikan: "Ikan Mas"},
     {id_nama_ikan: 13, nama_ikan: "Ikan Teri"},
     {id_nama_ikan: 14, nama_ikan: "Ikan Sapu"},
+    {id_nama_ikan: 14, nama_ikan: "Ikan Sapu"},
+    {id_nama_ikan: 14, nama_ikan: "Ikan Sapu"},
+    {id_nama_ikan: 14, nama_ikan: "Ikan Sapu-Sapu"},
+    {id_nama_ikan: 14, nama_ikan: "Ikan Sapu"},
+    {id_nama_ikan: 14, nama_ikan: "Ikan Sapu"},
+    {id_nama_ikan: 14, nama_ikan: "Ikan Sapu"},
     {id_nama_ikan: 15, nama_ikan: "Ikan Koi"}
 ];
 

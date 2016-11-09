@@ -14,8 +14,20 @@ var IkanEditorComponent = (function () {
     function IkanEditorComponent(ikanServices) {
         this.ikanServices = ikanServices;
         this.title = 'Daftar Ikan';
-        this.list_ikan = this.ikanServices.getDaftarIkan();
     }
+    IkanEditorComponent.prototype.getDaftarIkan = function () {
+        var _this = this;
+        this.ikanServices.getDaftarIkanPromisAsync()
+            .then(function (list_ikan_promise) { return _this.list_ikan = list_ikan_promise; });
+    };
+    IkanEditorComponent.prototype.getDaftarIkanBesar = function () {
+        var _this = this;
+        this.ikanServices.getDaftarIkanBesarPromiseAsync()
+            .then(function (list_ikan_besar_promise) { return _this.list_ikan = list_ikan_besar_promise; });
+    };
+    IkanEditorComponent.prototype.ngOnInit = function () {
+        this.getDaftarIkan();
+    };
     IkanEditorComponent.prototype.onSelect = function (ikan_pilih) {
         this.ikanPilihan = ikan_pilih;
     };
@@ -24,8 +36,7 @@ var IkanEditorComponent = (function () {
             moduleId: module.id,
             selector: 'my-app',
             templateUrl: 'ikan-list.component.html',
-            styleUrls: ["ikan-editor.component.css"],
-            providers: [ikan_data_service_1.IkanDataService]
+            styleUrls: ["ikan-editor.component.css"]
         }), 
         __metadata('design:paramtypes', [ikan_data_service_1.IkanDataService])
     ], IkanEditorComponent);

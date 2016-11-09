@@ -19,6 +19,12 @@ var IkanDataService = (function () {
     IkanDataService.prototype.getDaftarIkanBesar = function () {
         return mock_daftar_ikan_1.ListIkanBesarMock;
     };
+    IkanDataService.prototype.getDaftarIkanPromisAsync = function () {
+        return Promise.resolve(mock_daftar_ikan_1.ListIkanMock);
+    };
+    IkanDataService.prototype.getDaftarIkanBesarPromiseAsync = function () {
+        return Promise.resolve(mock_daftar_ikan_1.ListIkanBesarMock);
+    };
     IkanDataService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
