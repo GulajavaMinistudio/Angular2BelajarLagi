@@ -51,7 +51,6 @@ export class IkanEditorComponent implements OnInit{
         // this.getDaftarIkanBesar();
     }
 
-
     onSelect(ikan_pilih: IkanClass): void {
         this.ikanPilihan = ikan_pilih;
     }
