@@ -1,0 +1,1 @@
+{"version":3,"file":"hello-dashboard-routing.component.js","sourceRoot":"","sources":["hello-dashboard-routing.component.ts"],"names":[],"mappings":";;;;;;;;;;AAKA,qBAAwB,eAAe,CAAC,CAAA;AAQxC;IAAA;IAEA,CAAC;IARD;QAAC,gBAAS,CAAC;YACP,QAAQ,EAAE,MAAM,CAAC,EAAE;YACnB,QAAQ,EAAE,0BAA0B;YACpC,WAAW,EAAE,6BAA6B;SAC7C,CAAC;;oCAAA;IAIF,mCAAC;AAAD,CAAC,AAFD,IAEC;AAFY,oCAA4B,+BAExC,CAAA"}

@@ -15,15 +15,45 @@ var ikan_editor_component_1 = require("./ikaneditor/ikan-editor.component");
 var forms_1 = require("@angular/forms");
 var ikan_detail_component_1 = require("./ikaneditor/ikan-detail.component");
 var ikan_data_service_1 = require("./ikaneditor/ikan-data.service");
+var ikan_routing_app_component_1 = require("./ikanroutingservice/ikan-routing-app.component");
+var router_1 = require("@angular/router");
+var dashboard_component_1 = require("./ikanroutingservice/dashboard.component");
+var hello_dashboard_routing_component_1 = require("./ikanroutingservice/hello-dashboard-routing.component");
+var dashboardcontoh_component_1 = require("./ikanroutingservice/dashboardcontoh.component");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule,
+                router_1.RouterModule.forRoot([
+                    {
+                        path: "ikan_list",
+                        component: ikan_editor_component_1.IkanEditorComponent
+                    },
+                    {
+                        path: "dashboard",
+                        component: dashboard_component_1.DashboardComponent
+                    },
+                    {
+                        path: "",
+                        redirectTo: "/dashboard",
+                        pathMatch: "full"
+                    },
+                    {
+                        path: "hello-dashboard",
+                        component: hello_dashboard_routing_component_1.HelloDashboardRouteComponent
+                    },
+                    {
+                        path: "dashboard-contoh4",
+                        component: dashboardcontoh_component_1.DashboardContohComponent
+                    }
+                ])
+            ],
             declarations: [quickstart_component_1.QuickstartComponent,
-                ikan_editor_component_1.IkanEditorComponent, ikan_detail_component_1.IkanDetailComponent],
-            bootstrap: [ikan_editor_component_1.IkanEditorComponent],
+                ikan_editor_component_1.IkanEditorComponent, ikan_detail_component_1.IkanDetailComponent, ikan_routing_app_component_1.IkanRoutingComponent,
+                dashboard_component_1.DashboardComponent, hello_dashboard_routing_component_1.HelloDashboardRouteComponent, dashboardcontoh_component_1.DashboardContohComponent],
+            bootstrap: [ikan_routing_app_component_1.IkanRoutingComponent],
             providers: [ikan_data_service_1.IkanDataService]
         }), 
         __metadata('design:paramtypes', [])

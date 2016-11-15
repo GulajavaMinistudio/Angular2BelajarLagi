@@ -5,20 +5,16 @@
     <title>Editor Ikan</title>
 </head>
 <body>
-<h1>{{title}}</h1>
-
 <!--daftar ikan-->
 <ul class="ikans_class">
     <li *ngFor="let ikan of list_ikan"
-        [class.selected] = "ikan === ikanPilihan"
+        [class.selected]="ikan === ikanPilihan"
         (click)="onSelect(ikan)">
         <span class="id_badge">{{ikan.id_nama_ikan}}</span> <span class="nama_badge"> {{ikan.nama_ikan}}</span>
     </li>
 </ul>
 
-
-<ikan-selector-detail [ikan_detail] = "ikanPilihan"></ikan-selector-detail>
-
+<ikan-selector-detail [ikan_detail]="ikanPilihan"></ikan-selector-detail>
 
 </body>
 </html>

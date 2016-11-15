@@ -10,13 +10,44 @@ import {IkanEditorComponent} from "./ikaneditor/ikan-editor.component";
 import {FormsModule} from "@angular/forms";
 import {IkanDetailComponent} from "./ikaneditor/ikan-detail.component";
 import {IkanDataService} from "./ikaneditor/ikan-data.service";
+import {IkanRoutingComponent} from "./ikanroutingservice/ikan-routing-app.component";
+import {RouterModule} from "@angular/router";
+import {DashboardComponent} from "./ikanroutingservice/dashboard.component";
+import {HelloDashboardRouteComponent} from "./ikanroutingservice/hello-dashboard-routing.component";
+import {DashboardContohComponent} from "./ikanroutingservice/dashboardcontoh.component";
 
 
 @NgModule({
-    imports: [BrowserModule, FormsModule],
+    imports: [BrowserModule, FormsModule,
+
+        RouterModule.forRoot([
+            {
+                path: "ikan_list",
+                component: IkanEditorComponent
+            },
+            {
+                path: "dashboard",
+                component: DashboardComponent
+            },
+            {
+                path: "",
+                redirectTo: "/dashboard",
+                pathMatch: "full"
+            },
+            {
+                path: "hello-dashboard",
+                component: HelloDashboardRouteComponent
+            },
+            {
+                path: "dashboard-contoh4",
+                component: DashboardContohComponent
+            }
+        ])
+    ],
     declarations: [QuickstartComponent,
-    IkanEditorComponent, IkanDetailComponent],
-    bootstrap: [IkanEditorComponent],
+    IkanEditorComponent, IkanDetailComponent, IkanRoutingComponent,
+    DashboardComponent, HelloDashboardRouteComponent, DashboardContohComponent],
+    bootstrap: [IkanRoutingComponent],
     providers: [IkanDataService] //provider data service jika ingin ada di level globa
 })
 

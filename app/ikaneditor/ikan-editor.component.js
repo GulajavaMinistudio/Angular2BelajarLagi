@@ -34,7 +34,7 @@ var IkanEditorComponent = (function () {
     IkanEditorComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-app',
+            selector: 'my-ikan-routing',
             templateUrl: 'ikan-list.component.html',
             styleUrls: ["ikan-editor.component.css"]
         }), 
