@@ -7,7 +7,7 @@
 <body>
     <h3>Dashboard Ikan Populer</h3>
     <div class="grid grid-pad">
-        <div *ngFor="let ikan of list_ikan" class="col-1-4">
+        <div *ngFor="let ikan of list_ikan" [routerLink]="['/detail', ikan.id_nama_ikan]" class="col-1-4">
             <div class="module ikan">
                 <h4>
                     ID {{ikan.id_nama_ikan}} {{ikan.nama_ikan}}
@@ -17,3 +17,21 @@
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

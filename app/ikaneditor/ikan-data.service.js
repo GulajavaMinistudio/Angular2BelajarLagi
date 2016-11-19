@@ -25,6 +25,14 @@ var IkanDataService = (function () {
     IkanDataService.prototype.getDaftarIkanBesarPromiseAsync = function () {
         return Promise.resolve(mock_daftar_ikan_1.ListIkanBesarMock);
     };
+    IkanDataService.prototype.getIkanSatu = function (id) {
+        return this.getDaftarIkanPromisAsync()
+            .then(function (ikanlist) { return ikanlist.find(function (ikanitem) { return ikanitem.id_nama_ikan === id; }); });
+    };
+    IkanDataService.prototype.getIkanBesarSatu = function (id) {
+        return this.getDaftarIkanBesarPromiseAsync()
+            .then(function (ikanbesarlist) { return ikanbesarlist.find(function (ikanbesaritem) { return ikanbesaritem.id_nama_ikan === id; }); });
+    };
     IkanDataService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

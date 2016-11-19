@@ -1,7 +1,7 @@
 /*DAFTAR CSS UNTUK DAFTAR IKAN */
 
 .selected {
-    background-color: #CFD8DC ;
+    background-color: #CFD8DC;
     color: #ff5962;
     font-family: Helvetica, sans-serif;
 }
@@ -56,7 +56,6 @@
     border-radius: 4px 0 0 4px;
 }
 
-
 .div_id_ikan {
     font-family: Helvetica, sans-serif;
     color: #454545;
@@ -96,12 +95,35 @@
     border-radius: 4px;
 }
 
+.tombol_back {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #008CBA;
+    border: 0;
+    color: white;
+    padding: 10px 24px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    font-weight: bold;
+}
 
 
+.ikan_pilihan_h2 {
+    font-size: small;
+    font-family: Helvetica, sans-serif;
+}
 
-
-
-
+.tombol_lihat_detail {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #008CBA;
+    border: 0;
+    color: white;
+    padding: 10px 24px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    font-weight: bold;
+}
 
 
 

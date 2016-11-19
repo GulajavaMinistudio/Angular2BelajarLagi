@@ -4,6 +4,7 @@
 import {Component, OnInit} from "@angular/core";
 import {IkanClass} from "./ikan-detail-class";
 import {IkanDataService} from "./ikan-data.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -21,7 +22,10 @@ export class IkanEditorComponent implements OnInit{
     list_ikan: IkanClass[];
     ikanPilihan: IkanClass;
 
-    constructor(private ikanServices: IkanDataService) {
+    constructor(
+        private ikanServices: IkanDataService,
+        private routers: Router
+        ) {
         // this.list_ikan = this.ikanServices.getDaftarIkan();
     }
 
@@ -41,6 +45,11 @@ export class IkanEditorComponent implements OnInit{
 
     onSelect(ikan_pilih: IkanClass): void {
         this.ikanPilihan = ikan_pilih;
+    }
+
+
+    lihatDetail() : void {
+        this.routers.navigate(["/detail", this.ikanPilihan.id_nama_ikan])
     }
 
     // ikan_sub : IkanClass = {

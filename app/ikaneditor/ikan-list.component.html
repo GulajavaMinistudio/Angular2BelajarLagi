@@ -14,7 +14,14 @@
     </li>
 </ul>
 
-<ikan-selector-detail [ikan_detail]="ikanPilihan"></ikan-selector-detail>
+<!--<ikan-selector-detail [ikan_detail]="ikanPilihan"></ikan-selector-detail>-->
+
+<div *ngIf="ikanPilihan">
+    <h2 class="ikan_pilihan_h2">
+        {{ikanPilihan.nama_ikan | uppercase}} adalah ikan saya
+    </h2>
+    <button class="tombol_lihat_detail" (click)="lihatDetail()">Lihat Detail Ikan</button>
+</div>
 
 </body>
 </html>

@@ -25,4 +25,27 @@ export class IkanDataService {
     getDaftarIkanBesarPromiseAsync(): Promise<IkanClass[]> {
         return Promise.resolve(ListIkanBesarMock);
     }
+
+    getIkanSatu(id: number) : Promise<IkanClass> {
+
+        return this.getDaftarIkanPromisAsync()
+            .then(ikanlist => ikanlist.find(ikanitem => ikanitem.id_nama_ikan === id));
+    }
+
+    getIkanBesarSatu(id: number) : Promise<IkanClass> {
+
+        return this.getDaftarIkanBesarPromiseAsync()
+            .then(ikanbesarlist => ikanbesarlist.find(ikanbesaritem => ikanbesaritem.id_nama_ikan === id));
+    }
 }
+
+
+
+
+
+
+
+
+
+
+

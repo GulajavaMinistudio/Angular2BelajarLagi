@@ -10,9 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var ikan_data_service_1 = require("./ikan-data.service");
+var router_1 = require("@angular/router");
 var IkanEditorComponent = (function () {
-    function IkanEditorComponent(ikanServices) {
+    function IkanEditorComponent(ikanServices, routers) {
         this.ikanServices = ikanServices;
+        this.routers = routers;
         this.title = 'Daftar Ikan';
     }
     IkanEditorComponent.prototype.getDaftarIkan = function () {
@@ -31,6 +33,9 @@ var IkanEditorComponent = (function () {
     IkanEditorComponent.prototype.onSelect = function (ikan_pilih) {
         this.ikanPilihan = ikan_pilih;
     };
+    IkanEditorComponent.prototype.lihatDetail = function () {
+        this.routers.navigate(["/detail", this.ikanPilihan.id_nama_ikan]);
+    };
     IkanEditorComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -38,7 +43,7 @@ var IkanEditorComponent = (function () {
             templateUrl: 'ikan-list.component.html',
             styleUrls: ["ikan-editor.component.css"]
         }), 
-        __metadata('design:paramtypes', [ikan_data_service_1.IkanDataService])
+        __metadata('design:paramtypes', [ikan_data_service_1.IkanDataService, router_1.Router])
     ], IkanEditorComponent);
     return IkanEditorComponent;
 }());

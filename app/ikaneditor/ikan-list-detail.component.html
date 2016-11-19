@@ -7,22 +7,30 @@
 <body>
 
 <div *ngIf="ikan_detail">
+
     <h2>Nama {{ikan_detail.nama_ikan}}</h2>
+
     <!--<div class="div_id_ikan">-->
         <!--<label>ID Ikan : </label> {{ikan_detail.id_nama_ikan}}-->
     <!--</div>-->
     <div class="div_id_ikan_edit">
         <label>ID Ikan : </label>
     </div>
+
     <div>
         <input class="input_id_ikan" [(ngModel)]="ikan_detail.id_nama_ikan" placeholder="id nomor ikan">
     </div>
+
     <div class="div_nama_ikan_edit">
         <label>Nama Ikan : </label>
     </div>
+
     <div>
         <input class="input_nama_ikan" [(ngModel)]="ikan_detail.nama_ikan" placeholder="nama lengkap ikan">
     </div>
+
+    <button class="tombol_back" (click)="goBack()">Kembali</button>
+
 </div>
 
 
