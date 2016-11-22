@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cari Ikan</title>
+</head>
+<body>
+<div id="search-component">
+    <div class="h4div">Cari Ikan</div>
+    <input #searchBox id="search-box" (keyup)="searchIkan(searchBox.value)">
+
+    <div>
+        <div *ngFor="let ikan of ikanlist | async"
+             (click)="goToDetail(ikan)" class="search-result">
+            {{ikan.id_nama_ikan}}  {{ikan.nama_ikan}}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

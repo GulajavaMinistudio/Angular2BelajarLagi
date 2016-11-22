@@ -5,12 +5,25 @@
     <title>Editor Ikan</title>
 </head>
 <body>
+
+<div class="div_container_ikantambah">
+    <label class="label_ikan_tambah">Nama Ikan : </label> <input class="input_nama_ikan" #input_namaikan placeholder="nama ikan baru"/>
+
+    <div>
+        <button class="tombol_margin_right" (click)="addIkanBaru(input_namaikan.value); input_namaikan.value = ''">Tambah Ikan</button>
+    </div>
+
+</div>
+
 <!--daftar ikan-->
 <ul class="ikans_class">
     <li *ngFor="let ikan of list_ikan"
         [class.selected]="ikan === ikanPilihan"
         (click)="onSelect(ikan)">
-        <span class="id_badge">{{ikan.id_nama_ikan}}</span> <span class="nama_badge"> {{ikan.nama_ikan}}</span>
+        <span class="id_badge">{{ikan.id}}</span>
+        <span class="nama_badge"> {{ikan.nama_ikan}}</span>
+        <button class="delete"
+        (click)="deleteIkan(ikan); $event.stopPropagation()">x</button>
     </li>
 </ul>
 

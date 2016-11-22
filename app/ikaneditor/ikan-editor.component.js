@@ -22,19 +22,47 @@ var IkanEditorComponent = (function () {
         this.ikanServices.getDaftarIkanPromisAsync()
             .then(function (list_ikan_promise) { return _this.list_ikan = list_ikan_promise; });
     };
+    IkanEditorComponent.prototype.getDaftarIkanRest = function () {
+        var _this = this;
+        this.ikanServices.getIkanListAPI()
+            .then(function (list_ikan_promise) { return _this.list_ikan = list_ikan_promise; });
+    };
     IkanEditorComponent.prototype.getDaftarIkanBesar = function () {
         var _this = this;
         this.ikanServices.getDaftarIkanBesarPromiseAsync()
             .then(function (list_ikan_besar_promise) { return _this.list_ikan = list_ikan_besar_promise; });
     };
     IkanEditorComponent.prototype.ngOnInit = function () {
-        this.getDaftarIkan();
+        this.getDaftarIkanRest();
     };
     IkanEditorComponent.prototype.onSelect = function (ikan_pilih) {
         this.ikanPilihan = ikan_pilih;
     };
     IkanEditorComponent.prototype.lihatDetail = function () {
-        this.routers.navigate(["/detail", this.ikanPilihan.id_nama_ikan]);
+        this.routers.navigate(["/detail", this.ikanPilihan.id]);
+    };
+    IkanEditorComponent.prototype.addIkanBaru = function (namaikan) {
+        var _this = this;
+        var namaikan_trim = namaikan.trim();
+        if (!namaikan_trim) {
+            return;
+        }
+        this.ikanServices.createIkanBaru(namaikan_trim)
+            .then(function (ikanitem) {
+            _this.list_ikan.push(ikanitem);
+            _this.ikanPilihan = null;
+        });
+    };
+    IkanEditorComponent.prototype.deleteIkan = function (ikanhapus) {
+        var _this = this;
+        this.ikanServices
+            .deleteIkanList(ikanhapus.id)
+            .then(function () {
+            _this.list_ikan = _this.list_ikan.filter(function (ikan) { return ikan !== ikanhapus; });
+            if (_this.ikanPilihan === ikanhapus) {
+                _this.ikanPilihan = null;
+            }
+        });
     };
     IkanEditorComponent = __decorate([
         core_1.Component({

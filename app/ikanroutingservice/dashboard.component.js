@@ -16,7 +16,7 @@ var DashboardComponent = (function () {
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.ikanService.getDaftarIkanPromisAsync()
+        this.ikanService.getIkanListAPI()
             .then(function (list_ikan) { return _this.list_ikan = list_ikan.slice(1, 5); });
     };
     DashboardComponent = __decorate([

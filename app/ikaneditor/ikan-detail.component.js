@@ -23,11 +23,16 @@ var IkanDetailComponent = (function () {
     IkanDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
-            .switchMap(function (params) { return _this.ikanService.getIkanSatu(+params["id"]); })
-            .subscribe(function (ikan_detail) { return _this.ikan_detail = ikan_detail; });
+            .switchMap(function (params) { return _this.ikanService.getIkanSatuAPI(+params["id"]); })
+            .subscribe(function (ikan) { return _this.ikan_detail = ikan; });
     };
     IkanDetailComponent.prototype.goBack = function () {
         this.location.back();
+    };
+    IkanDetailComponent.prototype.saveIkan = function () {
+        var _this = this;
+        this.ikanService.updateIkanDetail(this.ikan_detail)
+            .then(function () { return _this.goBack(); });
     };
     __decorate([
         core_1.Input(), 

@@ -22,8 +22,11 @@ export class DashboardComponent implements OnInit{
 
     ngOnInit(): void {
 
-        this.ikanService.getDaftarIkanPromisAsync()
+        this.ikanService.getIkanListAPI()
             .then(list_ikan => this.list_ikan = list_ikan.slice(1,5));
+
+        // this.ikanService.getDaftarIkanPromisAsync()
+        //     .then(list_ikan => this.list_ikan = list_ikan.slice(1,5));
     }
 
 }

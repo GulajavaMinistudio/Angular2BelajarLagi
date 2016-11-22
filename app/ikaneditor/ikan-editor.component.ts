@@ -16,16 +16,14 @@ import {Router} from "@angular/router";
 })
 
 
-export class IkanEditorComponent implements OnInit{
+export class IkanEditorComponent implements OnInit {
 
     title = 'Daftar Ikan';
     list_ikan: IkanClass[];
     ikanPilihan: IkanClass;
 
-    constructor(
-        private ikanServices: IkanDataService,
-        private routers: Router
-        ) {
+    constructor(private ikanServices: IkanDataService,
+                private routers: Router) {
         // this.list_ikan = this.ikanServices.getDaftarIkan();
     }
 
@@ -34,13 +32,21 @@ export class IkanEditorComponent implements OnInit{
             .then(list_ikan_promise => this.list_ikan = list_ikan_promise);
     }
 
+    //dengan koneksi internet
+    getDaftarIkanRest(): void {
+        this.ikanServices.getIkanListAPI()
+            .then(list_ikan_promise => this.list_ikan = list_ikan_promise);
+    }
+
     getDaftarIkanBesar(): void {
+
         this.ikanServices.getDaftarIkanBesarPromiseAsync()
             .then(list_ikan_besar_promise => this.list_ikan = list_ikan_besar_promise);
     }
 
     ngOnInit(): void {
-        this.getDaftarIkan();
+        // this.getDaftarIkan();
+        this.getDaftarIkanRest();
     }
 
     onSelect(ikan_pilih: IkanClass): void {
@@ -48,8 +54,36 @@ export class IkanEditorComponent implements OnInit{
     }
 
 
-    lihatDetail() : void {
-        this.routers.navigate(["/detail", this.ikanPilihan.id_nama_ikan])
+    lihatDetail(): void {
+        this.routers.navigate(["/detail", this.ikanPilihan.id])
+    }
+
+    addIkanBaru(namaikan: string): void {
+
+        let namaikan_trim = namaikan.trim();
+
+        if (!namaikan_trim) {
+            return;
+        }
+
+        this.ikanServices.createIkanBaru(namaikan_trim)
+            .then(ikanitem => {
+                this.list_ikan.push(ikanitem);
+                this.ikanPilihan = null;
+            })
+    }
+
+
+    deleteIkan(ikanhapus: IkanClass): void {
+
+        this.ikanServices
+            .deleteIkanList(ikanhapus.id)
+            .then(() => {
+                this.list_ikan = this.list_ikan.filter(ikan => ikan !== ikanhapus);
+                if (this.ikanPilihan === ikanhapus) {
+                    this.ikanPilihan = null;
+                }
+            })
     }
 
     // ikan_sub : IkanClass = {

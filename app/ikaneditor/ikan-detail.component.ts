@@ -18,24 +18,34 @@ import "rxjs/add/operator/switchMap";
     styleUrls: ["ikan-editor.component.css"]
 })
 
-export class IkanDetailComponent implements OnInit{
+export class IkanDetailComponent implements OnInit {
 
-    constructor(
-        private ikanService: IkanDataService,
-        private route: ActivatedRoute,
-        private location: Location
-    ) {}
+    constructor(private ikanService: IkanDataService,
+                private route: ActivatedRoute,
+                private location: Location) {
+    }
 
     ngOnInit(): void {
 
+        // this.route.params
+        //     .switchMap((params : Params) => this.ikanService.getIkanSatu(+params["id"]))
+        //     .subscribe(ikan_detail => this.ikan_detail = ikan_detail);
+
         this.route.params
-            .switchMap((params : Params) => this.ikanService.getIkanSatu(+params["id"]))
-            .subscribe(ikan_detail => this.ikan_detail = ikan_detail)
+            .switchMap((params: Params) => this.ikanService.getIkanSatuAPI(+params["id"]))
+            .subscribe(ikan => this.ikan_detail = ikan);
     }
 
     //kembali ke asal
-    goBack() : void {
+    goBack(): void {
         this.location.back();
+    }
+
+    //simpan dengan rest client
+    saveIkan(): void {
+        this.ikanService.updateIkanDetail(this.ikan_detail)
+            .then(() => this.goBack());
+            // .catch(message => console.log(message));
     }
 
     @Input()
